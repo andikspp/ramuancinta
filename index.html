@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramuan Cinta Bymuty</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="bootstrap-5.3.3/dist/js/bootstrap.bundle.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- <style>
+        .bg-color {
+            background-color: #FE639C;
+        }
+
+        .navbar-nav .nav-link {
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            transform: scale(1.1);
+        }
+
+        .card {
+            margin-left: 7%;
+            margin-right: 7%;
+            margin-bottom: 25%;
+            background-color: #FE639C;
+        }
+
+        .card-text {
+            text-align: center;
+            color: white;
+        }
+
+        .card-title {
+            color: white;
+        }
+
+        .tampilkan:hover {
+            cursor: pointer;
+            transform: scale(1.01);
+            background-color: #ffd700;
+        }
+
+        .floating-btn {
+            z-index: 9999999999999999999999;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #fe639c;
+            color: #fff;
+            border: solid 1px white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-btn:hover {
+            background-color: #ffd700;
+        }
+    </style> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-color">
+        <div class="container">
+            <a class="navbar-brand" href="#beranda">
+                <img src="img/Group 5.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#beranda">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#tentang">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#produk">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#Testimoni">Testimoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- tombol pesan -->
+    <button type="button" class="floating-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <i class="fas fa-envelope"></i>
+    </button>
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade modal-form" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                        Hubungi Kami
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="pesanForm" action="#">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="pesan" class="form-label">Pesan</label>
+                            <textarea class="form-control" id="pesan" name="pesan" rows="3" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Tutup
+                        </button>
+                        <button type="button" class="btn text-white">
+                            Kirim
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- akhr modal -->
+
+    <section class="hero bg-light text-center py-5" id="Beranda">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 align-items-center py-5 px-5 hero-content">
+                    <div class="text-md-start">
+                        <h1>Ramuan Cinta</h1>
+                        <p>Minuman rempah yang terbuat dari jahe, sereh, kunyit, lengkuas 100% alami tanpa bahan kimia.
+                            Rasakan berjuta manfaat dari rempah-rempah yang diolah menjadi satu kedalam RAMUAN CINTA
+                            BYMUTY</p>
+                        <a href="https://api.whatsapp.com/send/?phone=%2B6285161381841&text=Halo+admin+dilla%2C+saya+mau+order+Ramuan+Cinta%2C+Keluhan+saya+adalah%3A+.........++%28isi+disini%29&type=phone_number&app_absent=0"
+                            class="btn btn-lg text-white">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/Group 33.png" alt="Ramuan Cinta" class="img-fluid hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about py-5 text-white" id="tentang">
+        <div class="container">
+            <h2 class="text-center mb-4">Tentang Kami</h2>
+            <p class="text-center">Ramuan Cinta adalah sebuah produk minuman dalam bentuk bubuk yang baik untuk
+                kesehatan dan sebagai booster bagi yang menjalankan program diet Ramuan cinta pure dari rempah-rempah
+                asli yang berkualitas dan tanpa tambahan apapun, sehingga menghasilkan bubuk rempah yang berkualitas.
+            </p>
+        </div>
+    </section>
+
+
+
+    <section class="products py-5" id="produk">
+        <div class="container">
+            <h1 class="text-center mb-4 produk-heading">
+                Produk
+            </h1>
+            <div class="row product-row">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-bs-target="#modalToggle" data-bs-toggle="modal">
+                    <div class="card tampilkan">
+                        <img class="card-img" src="img/chiaseed.png" />
+                        <div class="card-body">
+                            <p class="card-text">
+                                Premium Chia<br />Seed By Muty
+                            </p>
+                            <h3 class="card-title">
+                                Rp 20.000,-
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-bs-target="#modalToggle" data-bs-toggle="modal">
+                    <div class="card tampilkan">
+                        <img class="card-img" src="img/ramuancintabubuk.png" />
+                        <div class="card-body">
+                            <p class="card-text">
+                                Ramuan Cinta<br />Bubuk By Muty
+                            </p>
+                            <h3 class="card-title">
+                                Rp 95.000,-
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-bs-target="#modalToggle" data-bs-toggle="modal">
+                    <div class="card tampilkan">
+                        <img class="card-img" src="img/obatdietslim.png" />
+                        <div class="card-body">
+                            <p class="card-text">
+                                Obat Diet<br />Slim By Muty
+                            </p>
+                            <h3 class="card-title">
+                                RP 60.000,-
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-bs-target="#modalToggle" data-bs-toggle="modal">
+                    <div class="card tampilkan">
+                        <img class="card-img" src="img/ramuancintakapsul.png" />
+                        <div class="card-body">
+                            <p class="card-text">
+                                Ramuan Cinta<br />Kapsul By Muty
+                            </p>
+                            <h3 class="card-title">
+                                RP 75.000,-
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-bs-target="#modalToggle" data-bs-toggle="modal">
+                    <div class="card tampilkan">
+                        <img class="card-img" src="img/maduhitam.png" />
+                        <div class="card-body">
+                            <p class="card-text">
+                                Sereh Bubuk<br />By Muty
+                            </p>
+                            <h3 class="card-title">
+                                RP 20.000,-
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-bs-target="#modalToggle" data-bs-toggle="modal">
+                    <div class="card tampilkan">
+                        <img class="card-img" src="img/seasalt.png" />
+                        <div class="card-body">
+                            <p class="card-text">
+                                Sea Salt<br />By Muty
+                            </p>
+                            <h3 class="card-title">
+                                RP 20.000,-
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-bs-target="#modalToggle" data-bs-toggle="modal">
+                    <div class="card tampilkan">
+                        <img class="card-img" src="img/sendoktakar.png" />
+                        <div class="card-body">
+                            <p class="card-text">
+                                Sendok Takar<br />By Muty
+                            </p>
+                            <h3 class="card-title">
+                                RP 5.000,-
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-bs-target="#modalToggle" data-bs-toggle="modal">
+                    <div class="card tampilkan">
+                        <img class="card-img" src="img/serehbubuk.png" />
+                        <div class="card-body">
+                            <p class="card-text">
+                                Madu Hitam<br />By Muty
+                            </p>
+                            <h3 class="card-title">
+                                RP 20.000,-
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="modalToggle" aria-hidden="true" aria-labelledby="modalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-white" id="modalToggleLabel">Detail Produk</h1>
+                    <button type="button" class="btn-close bg-light" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-wrapper">
+                        <div class="row g-0">
+                            <div class="col-md-4 p-2 mb-2">
+                                <img src=".." class="img-fluid rounded-start" alt="Gambar produk" width="250">
+                            </div>
+                            <div class="col-md-8 p-2">
+                                <div class="card-body">
+                                    <h5 class="card-title product-name"></h5>
+                                    <p class="text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        Repellendus, blanditiis?</p>
+                                    <h2 class="text-white product-price"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-outline-light" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="about py-5 text-white testimonial-section" id="Testimoni">
+        <div class="container testimonial-container">
+            <h2 class="text-center mb-4" style="font-family: 'Berkshire Swash';">Testimoni</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="testimonial-item text-center">
+                        <h4>Cristiano Ronaldo</h4>
+                        <p class="text-muted">"Produk minuman jamu dari RAMUAN CINTA BYMUTY benar-benar mengubah hidup
+                            saya. Rasanya enak dan saya merasa lebih sehat setelah mengonsumsinya secara teratur."</p>
+                        <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;<p>Messi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="testimonial-item text-center">
+                        <h4>Messi</h4>
+                        <p class="text-muted">"Saya sangat merekomendasikan minuman jamu dari RAMUAN CINTA BYMUTY.
+                            Produk mereka sangat berkualitas dan membantu meningkatkan stamina saya, saat saya puasa
+                            setiap berbuka saya selalu meminumnya."</p>
+                        <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;<p>Messi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="testimonial-item text-center">
+                        <h4>Neymar</h4>
+                        <p class="text-muted">"Minuman jamu dari RAMUAN CINTA BYMUTY sungguh luar biasa. Saya merasakan
+                            perubahan positif dalam kesehatan saya setelah mengonsumsinya selama beberapa minggu."</p>
+                        <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;<p>Neymar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact py-5" id="kontak">
+        <div class="container">
+            <h2 class="text-center mb-4">Kontak Kami</h2>
+            <p class="text-center mb-4">Ayo Pesan Sekarang Juga!</p>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <a href="https://api.whatsapp.com/send/?phone=%2B6285161381841&text=Halo+admin+dilla%2C+saya+mau+order+Ramuan+Cinta%2C+Keluhan+saya+adalah%3A+.........++%28isi+disini%29&type=phone_number&app_absent=0"
+                        class="btn btn-lg btn-block text-white d-flex align-items-center justify-content-center btn-kontak whatsapp">
+                        <i class="fab fa-whatsapp mr-2"></i> +62 85161381841
+                    </a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <a href="https://shopee.co.id/shop/31781298?utm_source=an_11358680000&utm_medium=affiliates&utm_campaign=-&utm_content=31781298----&utm_term=au9s2hib7yp3&is_from_login=true"
+                        class="btn btn-lg btn-block text-white btn-kontak shopify">
+                        <i class="fab fa-shopify mr-2"></i> RAMUAN CINTA OFFICIAL (PUSAT)
+                    </a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <a href="https://www.tokopedia.com/mutiarap0703?utm_medium=Share&utm_medium=Share&utm_campaign=Shop%20Share&utm_source=Desktop%3Futm_campaign%3DShop%2520Share&utm_source=Desktop&_branch_match_id=1227786139690872426&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8nPzi9ITclM1MvJzMvWj0x3N0xNrPI3yUoCADj1jhQiAAAA"
+                        class="btn btn-lg btn-block text-white d-flex align-items-center justify-content-center btn-kontak tumblr">
+                        <i class="fab fa-tumblr-square mr-2"></i> Mutiarap0603
+                    </a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <a href="https://www.lazada.co.id/shop/ramuan-cinta-malang-pusat/?itemId=7928900879&spm=a2o4j.pdp_revamp.seller.1.12ce240ffpLn13&path=promotion-42714-0.htm&tab=promotion&channelSource=pdp"
+                        class="btn btn-lg btn-block text-white btn-kontak lazada">
+                        <i class="fab fa-linode mr-2"></i> Ramuan Cinta Malang PUSAT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-section">
+        <footer class="py-3">
+            <ul class="nav justify-content-center mb-3 container">
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-white">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tentang" class="nav-link px-2 text-white">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#produk" class="nav-link px-2 text-white">Produk</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#Testimoni" class="nav-link px-2 text-white">Testimoni</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#kontak" class="nav-link px-2 text-white">Kontak</a>
+                </li>
+            </ul>
+            <hr class="separator" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <p class="text-white">© 2024 Kelompok 5</p>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a href="#"><img class="col-4" src="img/Group 5.png" /></a>
+                    </div>
+                    <div class="col-4 text-end">
+                        <a
+                            href="https://shopee.co.id/shop/31781298?utm_source=an_11358680000&utm_medium=affiliates&utm_campaign=-&utm_content=31781298----&utm_term=au9s2hib7yp3&is_from_login=true"><img
+                                src="img/Vector-1.png" /></a>
+                        <a
+                            href="https://www.tokopedia.com/mutiarap0703?utm_medium=Share&utm_medium=Share&utm_campaign=Shop%20Share&utm_source=Desktop%3Futm_campaign%3DShop%2520Share&utm_source=Desktop&_branch_match_id=1227786139690872426&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8nPzi9ITclM1MvJzMvWj0x3N0xNrPI3yUoCADj1jhQiAAAA"><img
+                                src="img/Vector-2.png" /></a>
+                        <a
+                            href="https://www.lazada.co.id/shop/ramuan-cinta-malang-pusat/?itemId=7928900879&spm=a2o4j.pdp_revamp.seller.1.12ce240ffpLn13&path=promotion-42714-0.htm&tab=promotion&channelSource=pdp"><img
+                                src="img/Vector-3.png" /></a>
+                        <a href="#"><img src="img/Vector-4.png" /></a>
+                        <a
+                            href="https://api.whatsapp.com/send/?phone=%2B6285161381841&text=Halo+admin+dilla%2C+saya+mau+order+Ramuan+Cinta%2C+Keluhan+saya+adalah%3A+.........++%28isi+disini%29&type=phone_number&app_absent=0"><img
+                                src="img/Vector.png" /></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+
+    <script>
+        $(document).ready(function () {
+            // hover card product
+            $(".card").hover(
+                function () {
+                    $(this).css("transform", "scale(1.05)");
+                },
+                function () {
+                    $(this).css("transform", "scale(1)");
+                }
+            );
+
+            // untuk menampilkan modal detail produk
+            $(".card").click(function () {
+                var title = $(this).find(".card-text").text();
+                var deskripsi = $(this).find("#deskripsiProduk").html();
+                var harga = $(this).find(".card-title").text();
+                var gambar = $(this).find(".card-img").attr("src");
+
+                $("#detailModalLabel").text(title);
+                $("#modalBody").html(deskripsi);
+                $("#modalBody .card-img").attr("src", gambar);
+                $("#detailModal").modal("show");
+                $("#harga").text(harga).css("color", "black");
+            });
+
+            // efek hover untuk img
+            $(".img-fluid").hover(
+                function () {
+                    $(this).css("transform", "scale(1.05)");
+                },
+                function () {
+                    $(this).css("transform", "scale(1)");
+                }
+            );
+
+            // efek hover untuk button di kontak
+            $(".btn-kontak").hover(
+                function () {
+                    $(this).css("transform", "scale(1.05)");
+                },
+                function () {
+                    $(this).css("transform", "scale(1)");
+                }
+            );
+
+            $(document).ready(function () {
+                $("#detailModal").click(function () {
+                    $("#modal-content").modal();
+                });
+            });
+
+            $(".tampilkan").click(function () {
+                // $(".card-wrapper").fadeIn();
+                var productName = $(this).find(".card-text").text().trim();
+                var productPrice = $(this).find(".card-title").text().trim();
+                var imgSrc = $(this).find(".card-img").attr("src");
+                $(".card-wrapper .product-name").text(productName);
+                $(".card-wrapper .product-price").text(productPrice);
+                $(".card-wrapper .img-fluid").attr("src", imgSrc);
+            });
+        });
+    </script>
+</body>
+
+</html>
